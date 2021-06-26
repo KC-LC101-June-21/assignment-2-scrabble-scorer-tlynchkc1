@@ -108,7 +108,7 @@ function transform(obj) {
   for (let c in obj){
       for (let r=0; r < obj[c].length; r++){
         // 
-        newPointStructure[(obj[c][r]).toLowerCase()]=c;
+        newPointStructure[(obj[c][r]).toLowerCase()]=Number(c);
           
       }
      // newPointStructure[""] = 0;
