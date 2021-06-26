@@ -114,13 +114,13 @@ function transform(obj) {
       }
     }
 
-    newPointStructure.sort(function(a, b){
-      let x = a.letter.toLowerCase();
-      let y = b.letter.toLowerCase();
-      if (x < y) {return -1;}
-      if (x > y) {return 1;}
-      return 0;
-    });
+    // newPointStructure.sort(function(a, b){
+    //   let x = a.letter.toLowerCase();
+    //   let y = b.letter.toLowerCase();
+    //   if (x < y) {return -1;}
+    //   if (x > y) {return 1;}
+    //   return 0;
+    // });
 };
 
 function scrabbleScore(word) {
