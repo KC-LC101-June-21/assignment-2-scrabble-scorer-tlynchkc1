@@ -109,7 +109,7 @@ function transform(obj) {
       for (let r=0; r < obj[c].length; r++){
         newPointStructure.push(
           {
-            letter: obj[c][r].toUpperCase(), points: c
+            letter: obj[c][r], points: Number(c)
           });
       }
     }
