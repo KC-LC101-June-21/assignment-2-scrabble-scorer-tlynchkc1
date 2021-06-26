@@ -102,10 +102,10 @@ function scorerPrompt(word) {
 }
 
 
-let newPointStructure = [];
+let newPointStructure;
 
 function transform(obj) {
-  let newObj;
+  let newObj=[];
   for (let c in obj){
       for (let r=0; r < obj[c].length; r++){
         newObj.push(
