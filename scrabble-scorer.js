@@ -105,15 +105,16 @@ function scorerPrompt(word) {
 let newPointStructure = [];
 
 function transform(obj) {
+  let newObj;
   for (let c in obj){
       for (let r=0; r < obj[c].length; r++){
-        newPointStructure.push(
+        newObj.push(
           {
             letter: obj[c][r], points: Number(c)
           });
       }
     }
-  return newPointStructure;
+  return newObj;
     // newPointStructure.sort(function(a, b){
     //   let x = a.letter.toLowerCase();
     //   let y = b.letter.toLowerCase();
