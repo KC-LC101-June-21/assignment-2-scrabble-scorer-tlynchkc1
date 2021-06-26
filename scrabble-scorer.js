@@ -102,19 +102,18 @@ function scorerPrompt(word) {
 }
 
 
-let newPointStructure;
+let newPointStructure={};
 
 function transform(obj) {
-  let newObj=[];
   for (let c in obj){
       for (let r=0; r < obj[c].length; r++){
-        newObj.push(
-          {
-            letter: obj[c][r].toUpperCase(), points: c
-          });
+        // 
+        newPointStructure[(obj[c][r]).toLowerCase()]=c;
+          
       }
+     // newPointStructure[""] = 0;
     }
-  return newObj;
+  
     // newPointStructure.sort(function(a, b){
     //   let x = a.letter.toLowerCase();
     //   let y = b.letter.toLowerCase();
@@ -128,10 +127,10 @@ function scrabbleScore(word) {
   let wordScore=0;
   for (w = 0; w < word.length; w++) {
     for (let l in newPointStructure) {
-      if (newPointStructure[l].letter.toUpperCase() === word.charAt(w).toUpperCase()) {
-        
+      // if (newPointStructure[l].letter.toUpperCase() === word.charAt(w).toUpperCase()) {
+        if (newPointStructure[l].toUpperCase() === word.charAt(w).toUpperCase()) {
       //console.log(newPointStructure[l].letter);
-        wordScore += Number(newPointStructure[l].points);
+        wordScore += newPointStructure[l];
       }
     }    
   }
@@ -140,7 +139,7 @@ function scrabbleScore(word) {
 
 function runProgram() {
   
-  newPointStruture = transform(oldPointStructure);
+  transform(oldPointStructure);
 
   console.log("Let's play some scrabble!\n");
   let word = initialPrompt();
