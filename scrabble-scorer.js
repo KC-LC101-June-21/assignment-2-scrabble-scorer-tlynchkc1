@@ -113,7 +113,7 @@ function transform(obj) {
           });
       }
     }
-
+  return newPointStructure;
     // newPointStructure.sort(function(a, b){
     //   let x = a.letter.toLowerCase();
     //   let y = b.letter.toLowerCase();
@@ -139,7 +139,7 @@ function scrabbleScore(word) {
 
 function runProgram() {
   
-  transform(oldPointStructure);
+  newPointStruture = transform(oldPointStructure);
 
   console.log("Let's play some scrabble!\n");
   let word = initialPrompt();
