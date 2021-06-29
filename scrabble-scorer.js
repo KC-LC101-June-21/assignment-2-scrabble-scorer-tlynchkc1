@@ -57,14 +57,10 @@ function vowelBonusScore(word) {
   }
   return (word.length - vowelsFound) + (vowelsFound*3);
 }
-//  transform(obj) {
-// for (let x in obj) {
-// for (let i = 0; i < obj[x].length; i++) {
-// newScoreKey[(obj[x][i]).toLowerCase()] = x;
 
-// }
-// newScoreKey[' '] = 0;
-// }}
+
+let newPointStructure;
+
 function transform(obj) {
   let newPointStructure={};
   for (let o in obj) {
@@ -76,7 +72,9 @@ function transform(obj) {
 };
 
 function scrabbleScore(word) {
-let wordScore=0;
+
+  newPointStructure = transform(oldPointStructure);
+  let wordScore=0;
   for (w = 0; w < word.length; w++) {
     wordScore += Number(newPointStructure[word.charAt(w).toLowerCase()]);         
   }
@@ -125,12 +123,7 @@ function scorerPrompt() {
   console.log(`Score for '${wordToScore}': ${wordScore}`);
 }
 
-
-
-let newPointStructure;
-
 function runProgram() {
-  newPointStructure = transform(oldPointStructure);
   wordToScore = initialPrompt();
   scorerPrompt();
 }
