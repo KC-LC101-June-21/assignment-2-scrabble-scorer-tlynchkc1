@@ -59,8 +59,6 @@ function vowelBonusScore(word) {
 }
 
 
-let newPointStructure;
-
 function transform(obj) {
   let newPointStructure={};
   for (let o in obj) {
@@ -71,9 +69,9 @@ function transform(obj) {
   return newPointStructure;
 };
 
-function scrabbleScore(word) {
+let newPointStructure = transform(oldPointStructure);
 
-  newPointStructure = transform(oldPointStructure);
+function scrabbleScore(word) { 
   let wordScore=0;
   for (w = 0; w < word.length; w++) {
     wordScore += newPointStructure[word.charAt(w).toLowerCase()];         
