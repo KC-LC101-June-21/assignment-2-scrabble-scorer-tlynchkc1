@@ -86,9 +86,6 @@ function transform(obj) {
     }
   }
 
-  // If there is a space in the word do not award any points.
-  newPointStructure[' '] = 0;
-
   // return updated Scrablescoring algorithm
   return newPointStructure;
 };
@@ -99,7 +96,7 @@ let newPointStructure = transform(oldPointStructure);
 function scrabbleScore(word) { 
   let wordScore=0;
   // loop through each character in the user inputed word and add the correspondent point value of each letter the the wordScore
-  
+
   for (w = 0; w < word.length; w++) {
     wordScore += newPointStructure[word.charAt(w).toLowerCase()];         
   }
