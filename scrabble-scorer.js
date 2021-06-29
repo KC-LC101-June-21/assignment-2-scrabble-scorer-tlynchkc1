@@ -65,7 +65,7 @@ function transform(obj) {
   let newPointStructure={};
   for (let o in obj) {
     for (let c = 0; c < obj[o].length; c++) {
-      newPointStructure[(obj[o][c]).toLowerCase()] = o;
+      newPointStructure[(obj[o][c]).toLowerCase()] = Number(o);
     }
   }
   return newPointStructure;
@@ -76,7 +76,7 @@ function scrabbleScore(word) {
   newPointStructure = transform(oldPointStructure);
   let wordScore=0;
   for (w = 0; w < word.length; w++) {
-    wordScore += Number(newPointStructure[word.charAt(w).toLowerCase()]);         
+    wordScore += newPointStructure[word.charAt(w).toLowerCase()];         
   }
   return wordScore;
 }
