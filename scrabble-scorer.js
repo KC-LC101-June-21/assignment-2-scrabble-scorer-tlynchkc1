@@ -37,8 +37,7 @@ function oldScrabbleScorer(word) {
 
 function initialPrompt() {
   console.log("Let's play some scrabble!\n");
-  let invalidCharacters = ["0","1","2","3","4","5","6","7","8","9","10","!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}","[","]","|","?","<",">",".","/"];
-
+  
   let letters = /^[A-Za-z]+$/;
   
   let word;
